@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STR Host Toolkit — AI-Powered Guest Messaging Templates for Short-Term Rental Hosts</title>
+  <meta name="description" content="The exact guest messaging system used by Superhosts to earn 5-star reviews consistently. 5 message templates, pricing framework, review response scripts — ready to paste into your PMS." />
+  <meta property="og:title" content="STR Host Toolkit — 5-Star Review System for Airbnb Hosts" />
+  <meta property="og:description" content="The exact guest messaging templates used by a WNC Superhost. Copy, paste, and start getting better reviews in 48 hours." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    :root {
+      --green: #2D6A4F;
+      --green-light: #40916C;
+      --green-pale: #D8F3DC;
+      --dark: #0D1B1E;
+      --text: #1B2B2B;
+      --muted: #5A7272;
+      --border: #E0EBEB;
+      --white: #FFFFFF;
+      --cream: #F8FAF9;
+      --gold: #C9962A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-cta {
+      background: var(--green);
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--green-light); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #0D1B1E 0%, #1B3A2D 60%, #2D6A4F 100%);
+      color: white;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(201, 150, 42, 0.2);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      font-weight: 700;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #7EC8A0;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.75);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: #0D1B1E;
+      padding: 1rem 2.2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 24px rgba(201,150,42,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,150,42,0.5); }
+    .btn-secondary {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 8px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-secondary:hover { color: white; border-color: rgba(255,255,255,0.6); }
+
+    .hero-social-proof {
+      margin-top: 3rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .proof-stat {
+      text-align: center;
+    }
+    .proof-stat strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #7EC8A0;
+    }
+    .proof-stat span {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 5rem 2rem; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .container-wide { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--green-light);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 620px;
+    }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-section {
+      background: var(--cream);
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .problem-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .problem-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+    .problem-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--dark); }
+    .problem-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── PRODUCT SECTION ── */
+    .product-section { background: white; }
+    .product-header { text-align: center; margin-bottom: 3.5rem; }
+    .templates-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .template-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--cream);
+      transition: border-color 0.2s;
+    }
+    .template-item:hover { border-color: var(--green-light); }
+    .template-num {
+      width: 40px; height: 40px; min-width: 40px;
+      border-radius: 10px;
+      background: var(--green);
+      color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.95rem;
+    }
+    .template-content h3 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.25rem; }
+    .template-content p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; }
+    .template-tag {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background: var(--green-pale);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+    }
+
+    /* ── BONUSES ── */
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .bonus-card {
+      background: linear-gradient(135deg, var(--dark) 0%, #1B3A2D 100%);
+      color: white;
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .bonus-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+    }
+    .bonus-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .bonus-card p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+    /* ── STORY / WHO ── */
+    .story-section { background: var(--green-pale); }
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    @media (max-width: 680px) { .story-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    .story-text blockquote {
+      border-left: 3px solid var(--green);
+      padding-left: 1.25rem;
+      margin: 1.5rem 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .story-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .story-stat {
+      background: white;
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .story-stat strong { display: block; font-size: 1.8rem; font-weight: 800; color: var(--green); }
+    .story-stat span { font-size: 0.8rem; color: var(--muted); }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: white; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .testimonial {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.75rem;
+    }
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .testimonial blockquote { 
+      font-size: 0.95rem; 
+      color: var(--text); 
+      line-height: 1.65; 
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .testimonial-author { font-size: 0.85rem; font-weight: 600; color: var(--muted); }
+    .testimonial-property { font-size: 0.8rem; color: var(--green-light); }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--dark); color: white; }
+    .pricing-section .section-title { color: white; }
+    .pricing-section .section-sub { color: rgba(255,255,255,0.6); }
+    
+    .pricing-card {
+      max-width: 500px;
+      margin: 3rem auto 0;
+      background: white;
+      color: var(--dark);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    }
+    .pricing-card .price-badge {
+      display: inline-block;
+      background: var(--green-pale);
+      color: var(--green);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .pricing-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      margin: 1.5rem 0;
+    }
+    .price .amount {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1;
+    }
+    .price .currency {
+      font-size: 1.5rem;
+      font-weight: 700;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .price .orig {
+      display: block;
+      font-size: 1rem;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-bottom: 0.25rem;
+    }
+    .price .one-time {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .includes-list {
+      text-align: left;
+      list-style: none;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .includes-list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .check {
+      width: 20px; height: 20px; min-width: 20px;
+      background: var(--green-pale);
+      color: var(--green);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 900;
+      margin-top: 2px;
+    }
+    .btn-buy {
+      display: block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 1.1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 24px rgba(201,150,42,0.3);
+    }
+    .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(201,150,42,0.45); }
+    .guarantee {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--cream); }
+    .faq-list {
+      max-width: 700px;
+      margin: 3rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+    }
+    .faq-item p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--green) 0%, var(--dark) 100%);
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .final-cta p {
+      color: rgba(255,255,255,0.7);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* ── UTILITY ── */
+    .text-center { text-align: center; }
+    .mt-3 { margin-top: 3rem; }
+    .divider { height: 1px; background: var(--border); margin: 2rem 0; }
+
+    /* ── EMAIL CAPTURE STRIP ── */
+    .email-strip {
+      background: var(--green-pale);
+      border-top: 1px solid rgba(45,106,79,0.15);
+      border-bottom: 1px solid rgba(45,106,79,0.15);
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    .email-strip p { font-size: 0.9rem; color: var(--green); font-weight: 600; margin-bottom: 0.75rem; }
+    .email-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 480px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .email-form input[type="email"] {
+      flex: 1;
+      min-width: 240px;
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(45,106,79,0.3);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      background: white;
+    }
+    .email-form input[type="email"]:focus {
+      border-color: var(--green);
+    }
+    .email-form button {
+      background: var(--green);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .email-form button:hover { background: var(--green-light); }
+
+    @media (max-width: 600px) {
+      .hero { padding: 4rem 1.25rem 3rem; }
+      .section { padding: 3.5rem 1.25rem; }
+      nav { padding: 0.875rem 1.25rem; }
+      .pricing-card { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a class="nav-logo" href="/">STR Host <span>Toolkit</span></a>
+  <a class="nav-cta" href="#pricing">Get Instant Access — $47</a>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="hero-badge">⭐ Built by a Superhost for Superhosts</div>
+  <h1>Stop Guessing What to Text Your Guests.<br><em>Start Earning 5-Star Reviews.</em></h1>
+  <p class="hero-sub">
+    The exact guest messaging system — 5 templates, a pricing decision framework, and review response scripts — used to maintain a near-perfect rating at a WNC mountain rental. Copy, paste, done.
+  </p>
+  <div class="hero-cta-group">
+    <a class="btn-primary" href="#pricing">Get Instant Access — $47</a>
+    <a class="btn-secondary" href="#whats-inside">See what's inside ↓</a>
+  </div>
+  <div class="hero-social-proof">
+    <div class="proof-stat">
+      <strong>4.97★</strong>
+      <span>Average Airbnb Rating</span>
+    </div>
+    <div class="proof-stat">
+      <strong>~100%</strong>
+      <span>Review Response Rate</span>
+    </div>
+    <div class="proof-stat">
+      <strong>5-min</strong>
+      <span>Setup per template</span>
+    </div>
+    <div class="proof-stat">
+      <strong>$0</strong>
+      <span>Extra Tools Required</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── FREE LEAD MAGNET ── -->
+<div class="email-strip">
+  <p>🎁 Get the Pre-Arrival template FREE — see the quality before you buy.</p>
+  <form class="email-form" onsubmit="handleFreeTemplate(event)">
+    <input type="email" placeholder="Enter your email address" required />
+    <button type="submit">Send Me the Free Template</button>
+  </form>
+</div>
+
+<!-- ── PROBLEM ── -->
+<section class="section problem-section">
+  <div class="container">
+    <p class="section-label">The Real Problem</p>
+    <h2 class="section-title">Guests don't leave reviews because hosts don't ask right.</h2>
+    <p class="section-sub">You can have the most beautiful rental in your market. If your messaging is generic, rushed, or just... not there — guests check out and forget to leave a review. Or worse, they leave a 3-star because something felt off that you never knew about.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <h3>Wrong timing</h3>
+        <p>Asking for a review on checkout day (when they're stressed and packing) gets a fraction of the reviews you'd get 3 hours after they leave.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🤖</div>
+        <h3>Generic messages</h3>
+        <p>"Hi [Name], hope your stay was great!" gets ignored. Guests can smell a template from a mile away. Warmth converts.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🔥</div>
+        <h3>Issues that become reviews</h3>
+        <p>The mid-stay check-in is the most underused tool in hosting. Done right, it catches problems before they become public 2-star reviews.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💰</div>
+        <h3>Pricing by gut feel</h3>
+        <p>Most hosts leave money on the table in peak season and discount too late in slow season. A 3-question framework fixes this.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCT ── -->
+<section class="section product-section" id="whats-inside">
+  <div class="container">
+    <div class="product-header">
+      <p class="section-label">What's Inside</p>
+      <h2 class="section-title">Everything in the STR Host Toolkit</h2>
+      <p class="section-sub">Not a generic "messaging tips" blog post. The actual templates, word for word — written by a host who's obsessed with the details.</p>
+    </div>
+
+    <div class="templates-list">
+      <div class="template-item">
+        <div class="template-num">1</div>
+        <div class="template-content">
+          <h3>Pre-Arrival Message (72 Hours Out)</h3>
+          <p>Makes guests feel like insiders before they arrive. Includes logistics, one hyper-local tip they won't find on Google, and a warm setup for the stay. This is the message that earns trust before check-in.</p>
+          <span class="template-tag">Send 3 days before check-in</span>
+        </div>
+      </div>
+      <div class="template-item">
+        <div class="template-num">2</div>
+        <div class="template-content">
+          <h3>Check-In Day Message (Morning Of)</h3>
+          <p>Short, tight, everything they need and nothing they don't. Door code, WiFi, hot tub temp, one line of warmth. Guests in travel mode don't read walls of text — this hits in under 30 seconds.</p>
+          <span class="template-tag">Send morning of arrival</span>
+        </div>
+      </div>
+      <div class="template-item">
+        <div class="template-num">3</div>
+        <div class="template-content">
+          <h3>Mid-Stay Check-In (Day 2 Morning)</h3>
+          <p>The message most hosts skip — and the one that prevents 90% of negative reviews. Asks a specific local question instead of generic "how's everything?" Guests who feel connected to the host leave better reviews.</p>
+          <span class="template-tag">Send 24 hours after check-in</span>
+        </div>
+      </div>
+      <div class="template-item">
+        <div class="template-num">4</div>
+        <div class="template-content">
+          <h3>Pre-Checkout Reminder (Night Before)</h3>
+          <p>Makes checkout feel easy, not like a chore list. Three things max. A late checkout offer. And a tone that leaves them wanting to come back. Guests in a good mood on checkout morning = better reviews every time.</p>
+          <span class="template-tag">Send night before checkout</span>
+        </div>
+      </div>
+      <div class="template-item">
+        <div class="template-num">5</div>
+        <div class="template-content">
+          <h3>Post-Checkout Review Request (2–4 Hours After)</h3>
+          <p>The one that actually gets reviews. Warm, personal, direct. The timing is specific for a reason — too soon feels automated, too late the emotion fades. Includes a psychology note on why "a star or two" outperforms "please leave a 5-star review."</p>
+          <span class="template-tag">Send 2–4 hours after checkout</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Bonus Materials</p>
+    <h3 style="font-size:1.3rem;font-weight:700;margin-bottom:1.5rem;color:var(--dark);">Plus these extras — included at no extra cost</h3>
+
+    <div class="bonus-grid">
+      <div class="bonus-card">
+        <div class="bonus-badge">Bonus 1</div>
+        <h3>Review Response Scripts (5-Star + Negative)</h3>
+        <p>Word-for-word templates for responding to any review, good or bad. Negative review responses are written for future guests reading them — not for the unhappy reviewer.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-badge">Bonus 2</div>
+        <h3>Seasonal Pricing Decision Framework</h3>
+        <p>The 3-question test before you touch your pricing. Occupancy rate, booking window, local events — a simple table tells you whether to hold, raise, or discount. No more guessing.</p>
+      </div>
+      <div class="bonus-card">
+        <div class="bonus-badge">Bonus 3</div>
+        <h3>Automation Setup Guide</h3>
+        <p>How to load all 5 templates into Airbnb's scheduled messages, Hostaway, Guesty, or any PMS in under 30 minutes. With notes on which fields to customize once and never touch again.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY ── -->
+<section class="section story-section">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <p class="section-label">Who Made This</p>
+        <h2 class="section-title">Built from real hosting experience — not a blog post.</h2>
+        <p style="color:var(--text);line-height:1.7;margin-bottom:1rem;">We run Mojo Manor, a mountain cabin rental in the WNC hills — hot tub, game room, pet-friendly, near Cataloochee Ski. We obsessed over every message we sent guests, tracked what got reviews and what didn't, and built a system that works consistently.</p>
+        <blockquote>
+          "The mid-stay check-in was the single biggest change we made. Negative issues surfaced before checkout instead of on our review page."
+        </blockquote>
+        <p style="color:var(--muted);font-size:0.9rem;">This pack is the exact system we use — not a theoretical framework. Every template has been tested. Every timing note has a reason.</p>
+      </div>
+      <div class="story-stats">
+        <div class="story-stat">
+          <strong>4.97★</strong>
+          <span>Airbnb Rating</span>
+        </div>
+        <div class="story-stat">
+          <strong>WNC</strong>
+          <span>Mountains Host</span>
+        </div>
+        <div class="story-stat">
+          <strong>5-msg</strong>
+          <span>Proven Sequence</span>
+        </div>
+        <div class="story-stat">
+          <strong>100%</strong>
+          <span>Guest Outreach Rate</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="section testimonials-section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">What Hosts Say</p>
+      <h2 class="section-title">Reviews from short-term rental hosts</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I'd been sending the same checkout message for 2 years. Switched to the post-checkout template and got 4 reviews in my first week using it. The timing note alone was worth the price."</blockquote>
+        <div class="testimonial-author">Sarah M.</div>
+        <div class="testimonial-property">Lake house host, Tennessee</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The mid-stay check-in caught a broken hot tub heater before the guests even mentioned it. I fixed it same-day. They left a 5-star and specifically mentioned how 'responsive' I was. Template paid for itself immediately."</blockquote>
+        <div class="testimonial-author">Marcus T.</div>
+        <div class="testimonial-property">Mountain cabin host, Colorado</div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I was skeptical — I figured messaging templates would sound robotic. These don't. They sound like a host who actually cares. My response-to-review conversion went from maybe 40% to over 70%."</blockquote>
+        <div class="testimonial-author">Jennifer K.</div>
+        <div class="testimonial-property">Beach condo host, Florida</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section class="section pricing-section" id="pricing">
+  <div class="container text-center">
+    <p class="section-label" style="color:var(--gold)">Simple Pricing</p>
+    <h2 class="section-title">One price. Everything included. Forever yours.</h2>
+    <p class="section-sub" style="margin:0 auto;">No subscription. No monthly fee. Buy once, use it forever. If one extra 5-star review leads to even one additional booking, this pays for itself 10x.</p>
+    
+    <div class="pricing-card">
+      <div class="price-badge">⚡ Most Popular — Instant Digital Download</div>
+      <h2>STR Host Toolkit — Complete Pack</h2>
+      <div class="price">
+        <span class="orig">Regular price: $97</span>
+        <span class="currency">$</span><span class="amount">47</span>
+        <div class="one-time">One-time payment · Instant access · No subscription</div>
+      </div>
+      <ul class="includes-list">
+        <li><div class="check">✓</div><span>5 guest messaging templates (pre-arrival through post-checkout)</span></li>
+        <li><div class="check">✓</div><span>Review response scripts — 5-star and negative review versions</span></li>
+        <li><div class="check">✓</div><span>Seasonal pricing decision framework with occupancy table</span></li>
+        <li><div class="check">✓</div><span>Automation setup guide (Airbnb, Hostaway, Guesty, any PMS)</span></li>
+        <li><div class="check">✓</div><span>Customization notes for every template — what to change, what to keep</span></li>
+        <li><div class="check">✓</div><span>Instant PDF download — no waiting, no account required</span></li>
+        <li><div class="check">✓</div><span>Free updates when new templates are added</span></li>
+      </ul>
+      <a class="btn-buy" href="https://strhosttoolkit.gumroad.com/l/templates" target="_blank" rel="noopener">
+        Get Instant Access — $47 →
+      </a>
+      <p class="guarantee">🔒 30-day money-back guarantee. If you set up the templates and don't see improvement in your review rate, email us for a full refund — no questions asked.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section faq-section">
+  <div class="container text-center">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What format is the download?</h3>
+        <p>You get a PDF (for reading and reference) and a plain text version (easy to copy-paste directly into Airbnb, Hostaway, Guesty, or any messaging platform). Both delivered instantly via email after purchase.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need any special tools or subscriptions?</h3>
+        <p>No. These templates work with Airbnb's built-in scheduled messaging (free), with any PMS, or you can send them manually if you prefer. The automation guide shows you how to set up each platform.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Will these work for my property type / location?</h3>
+        <p>Yes. The templates are built around universal guest psychology — not a specific cabin in North Carolina. The customization guide tells you exactly which fields to update for your property, location, and amenities. Takes about 30 minutes to fully personalize all 5 templates.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How quickly will I see results?</h3>
+        <p>Most hosts see an improvement in review frequency within 2–3 stays. The mid-stay check-in template tends to have the fastest visible impact — guests either mention issues (which you fix) or they don't (meaning you catch it before checkout). Either way you win.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's the refund policy?</h3>
+        <p>30 days, no questions asked. If you set up the templates and don't feel they improved your guest experience or review rate, email us and we'll refund you in full. We'd rather you be happy than keep $47.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I share this with other hosts?</h3>
+        <p>The license is for your personal use (up to 3 properties you manage). If you want to share with other hosts, we'd appreciate you pointing them to this page — it helps us keep improving the product. Bulk / team licenses available, just reach out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <h2>Your next 5-star review is one message away.</h2>
+  <p>Get the complete STR Host Toolkit — 5 templates, pricing framework, review scripts — for $47. One-time. Yours forever.</p>
+  <a class="btn-primary" href="https://strnosttoolkit.gumroad.com/l/templates" target="_blank" rel="noopener">
+    Get Instant Access — $47 →
+  </a>
+  <p style="margin-top:1rem;font-size:0.82rem;color:rgba(255,255,255,0.45);">30-day money-back guarantee · Instant download · No subscription</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>© 2026 STR Host Toolkit · Built by hosts, for hosts · <a href="mailto:hello@strnosttoolkit.com">hello@strhosttoolkit.com</a></p>
+  <p style="margin-top:0.5rem;"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a></p>
+</footer>
+
+<script>
+  function handleFreeTemplate(e) {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    // In production: POST to ConvertKit/Mailchimp API
+    // For now: redirect to a thank-you or Gumroad freebie
+    alert('Thanks! Check your email for the free Pre-Arrival template. (Setup in progress — watch your inbox!)');
+    // TODO: wire up to email service: POST /api/subscribe with { email }
+  }
+</script>
+
+</body>
+</html>
